@@ -1,0 +1,53 @@
+{
+  "name": "@benjypng/logseq-request",
+  "version": "0.0.0-development",
+  "description": "CORS-free HTTP requests for Logseq plugins, via Logseq's exper_request proxy",
+  "author": "benjypng",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/benjypng/logseq-request.git"
+  },
+  "keywords": [
+    "logseq",
+    "logseq-plugin",
+    "cors",
+    "http",
+    "request",
+    "fetch"
+  ],
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsup src/index.ts --format esm,cjs --dts --clean",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "lint": "biome check --write ."
+  },
+  "release": {
+    "branches": [
+      "main"
+    ]
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.3.11",
+    "tsup": "^8.5.0",
+    "typescript": "^5.5.4",
+    "vitest": "^3.2.4"
+  }
+}
