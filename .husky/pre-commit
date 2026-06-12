@@ -1,0 +1,1 @@
+echo "Running biome" && bunx @biomejs/biome check --write . && echo "Running tsc" && bunx tsc --noEmit && echo "Running tests" && bunx vitest run
