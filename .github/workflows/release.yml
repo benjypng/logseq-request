@@ -32,8 +32,3 @@ jobs:
       - run: npx semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          # Bootstrap only: used for the first publish, before the npm
-          # package exists and a trusted publisher can be configured.
-          # Once trusted publishing is set up, delete the NPM_TOKEN secret —
-          # OIDC is attempted first and this falls away naturally.
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
